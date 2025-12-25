@@ -4,12 +4,12 @@
   --color-primary: #ff0f53;
   --color-accent: #00f2ea;
 
-  --font-poppins: 'Poppins', sans-serif;
+  --font-exo: 'Exo 2', sans-serif;
 }
 
 body {
   background-color: #222;
   color: #fff;
-  font-family: var(--font-poppins);
+  font-family: var(--font-exo);
   -webkit-font-smoothing: antialiased;
 }

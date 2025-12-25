@@ -4,9 +4,9 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 import './index.css'
 
-import '@fontsource/poppins/400.css'
-import '@fontsource/poppins/600.css'
-import '@fontsource/poppins/700.css'
+import '@fontsource/exo-2/400.css'
+import '@fontsource/exo-2/600.css'
+import '@fontsource/exo-2/700.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
