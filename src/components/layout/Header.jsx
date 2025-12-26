@@ -6,7 +6,7 @@ const NavItem = ({ link, children }) => {
     <li>
       <a
         href={link}
-        className='hover:bg-purple-400/40 rounded-full transition-all duration-300 md:p-3 block'
+        className='hover:bg-primary/40 rounded-full transition-all duration-300 md:p-3 block'
       >
         {children}
       </a>
