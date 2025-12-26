@@ -1,64 +1,60 @@
-import { Link } from 'react-router-dom'
-import mediemoji from '../../assets/mediemoji.png'
-import { FiGithub } from 'react-icons/fi'
+import { useState } from 'react'
+import { FaHamburger } from 'react-icons/fa'
 
 const NavItem = ({ link, children }) => {
-  const isExternal = link.startsWith('http')
-  const sharedStyles = 'hover:bg-purple-400/40 rounded-full transition-all duration-400'
-
   return (
     <li>
-      {isExternal
-        ? (
-          <a
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'
-            className={`${sharedStyles}`}
-          >
-            {children}
-          </a>
-          )
-        : (
-          <Link
-            to={link}
-            className={`${sharedStyles} `}
-          >
-            {children}
-          </Link>
-          )}
+      <a
+        href={link}
+        rel='noopener noreferrer'
+        className='hover:bg-purple-400/40 rounded-full transition-all duration-400 p-3'
+      >
+        {children}
+      </a>
     </li>
   )
 }
 
 export function Header () {
+  const [showMenu, setShowMenu] = useState(false)
+
+  const handleClick = () => {
+    setShowMenu(!showMenu)
+  }
+
   return (
-    <header>
-      <nav className='p-2'>
-        <ul className='flex justify-center items-center gap-5'>
-          <NavItem link='/'>
-            <img
-              src={mediemoji}
-              alt='Emoji de Dani Medié sonriendo'
-              className='w-10 h-10 object-contain'
-            />
-          </NavItem>
+    <header id='header' className='text-lg'>
+      <nav className='p-5'>
+        <ul className='relative flex justify-between items-center gap-5'>
+          <p className='font-bold'>medié</p>
 
-          <NavItem link='/experience'>
-            Experience
-          </NavItem>
+          <button className='font-bold md:hidden' onClick={handleClick}>
+            <FaHamburger className='w-5 h-5' />
+          </button>
 
-          <NavItem link='/projects'>
-            Projects
-          </NavItem>
+          <div
+            className={`
+              ${showMenu ? 'flex' : 'hidden'} 
+              flex-col text-right absolute top-full right-0 z-50
+              md:flex md:flex-row md:static md:gap-5
+            `}
+          >
+            <NavItem link='#about'>
+              About
+            </NavItem>
 
-          <NavItem link='/About'>
-            About
-          </NavItem>
+            <NavItem link='#experience'>
+              Experience
+            </NavItem>
 
-          <NavItem link='https://github.com/danimedie'>
-            <FiGithub className='w-6 h-6' />
-          </NavItem>
+            <NavItem link='#projects'>
+              Projects
+            </NavItem>
+
+            <NavItem link='#contact'>
+              Contact
+            </NavItem>
+          </div>
         </ul>
       </nav>
     </header>
