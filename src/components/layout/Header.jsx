@@ -28,18 +28,18 @@ export function Header () {
         </a>
 
         <button
-          className='font-bold md:hidden z-50'
+          className='md:hidden z-50'
           onClick={handleClick}
           aria-label='Abrir menú de navegación'
           aria-expanded={showMenu}
         >
-          <FaHamburger className='w-6 h-6' />
+          <FaHamburger className={`${showMenu ? 'text-primary' : 'text-white'} w-6 h-6 transition-all duration-300`} />
         </button>
 
         <ul className={`
           ${showMenu ? 'flex' : 'hidden'} 
-          flex-col absolute text-right top-full right-0 z-50
-          md:flex md:flex-row md:static md:gap-5
+          flex-col absolute top-full right-0 w-full bg-[#222] p-5 gap-4 shadow-xl border-b border-primary z-50
+          md:flex md:flex-row md:static md:bg-transparent md:w-auto md:p-0 md:border-none md:shadow-none
         `}
         >
           <NavItem link='#about'>About</NavItem>
