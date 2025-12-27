@@ -8,7 +8,7 @@ export default function App () {
   return (
     <div className='flex flex-col min-h-screen'>
       <Header />
-      <main className='flex-1 p-5'>
+      <main className='flex-1 p-6'>
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>

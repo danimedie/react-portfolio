@@ -20,8 +20,8 @@ export function Header () {
   const handleClick = () => setShowMenu(!showMenu)
 
   return (
-    <header id='header' className='text-lg relative'>
-      <nav className='p-5 flex justify-between items-center'>
+    <header id='header' className='text-lg fixed w-full p-6 bg-[#222] z-100'>
+      <nav className='flex justify-between items-center'>
 
         <a href='/' className='font-bold text-2xl tracking-tighter'>
           medié
@@ -42,9 +42,9 @@ export function Header () {
           md:flex md:flex-row md:static md:bg-transparent md:w-auto md:p-0 md:border-none md:shadow-none
         `}
         >
+          <NavItem link='#projects'>Projects</NavItem>
           <NavItem link='#about'>About</NavItem>
           <NavItem link='#experience'>Experience</NavItem>
-          <NavItem link='#projects'>Projects</NavItem>
           <NavItem link='#contact'>Contact</NavItem>
         </ul>
 
